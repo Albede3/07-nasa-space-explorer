@@ -121,6 +121,12 @@ button:hover {
   display: flex;
   flex-direction: column;
   border: 2px solid #105bd8; /* $color-primary */
+  transition: transform 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+/* Hover zoom effect for the whole .apod-image card */
+.apod-image:hover {
+  transform: scale(1.07);
 }
 
 /* Three columns on wider screens */
@@ -136,6 +142,7 @@ button:hover {
   object-fit: cover;
   border-radius: 4px;
   border: 2px solid #0b3d91; /* $color-primary-darker */
+  /* Remove transition from img, it's now on .apod-image */
 }
 
 .apod-image h3, .gallery-item h3 {
@@ -168,4 +175,63 @@ button:hover {
   font-size: 48px;
   margin-bottom: 20px;
   color: #02bfe7; /* $color-primary-alt */
+}
+
+/* Space fact section */
+.space-fact {
+  background: #e1f3f8; /* $color-primary-alt-lightest */
+  color: #061f4a;      /* $color-primary-darkest */
+  border-left: 6px solid #02bfe7; /* $color-primary-alt */
+  padding: 16px 24px;
+  margin: 0 0 20px 0;
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(16,91,216,0.08);
+}
+
+/* Modal styles */
+.modal-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(6,31,74,0.85); /* $color-primary-darkest with opacity */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal {
+  background: #ffffff; /* $color-white */
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 2px 8px rgba(16,91,216,0.15);
+  position: relative;
+  text-align: center;
+  max-height: 90vh;
+  overflow-y: auto;
+  color: #212121; /* $color-base for modal text */
+}
+.modal h2 {
+  color: #0b3d91; /* $color-primary-darker for modal heading */
+}
+.modal p {
+  color: #212121; /* $color-base for modal paragraphs */
+}
+.modal-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  border: 2px solid #0b3d91; /* $color-primary-darker */
+}
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #105bd8; /* $color-primary */
+}
 }
